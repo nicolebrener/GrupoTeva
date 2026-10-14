@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grupo Teva | Tratamiento de efluentes y residuos orgánicos</title>
+<meta name="description" content="Más de 30 años cuidando el planeta. Tratamiento de efluentes líquidos y residuos orgánicos / RSU, ingeniería, montaje y operación de plantas.">
+<link rel="icon" type="image/png" href="assets/logo-grupoteva-sinurl.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="ds/nocturne/styles.css">
+  <script src="ds/nocturne/_ds_bundle.js"></script>
+  <script src="image-slot.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --color-text: #e9e9ed;
+      --color-bg: oklch(0.2 0.07 250);
+      --color-surface: oklch(0.26 0.075 248);
+      --color-section: oklch(0.3 0.1 242);
+      --color-section-glow: oklch(0.45 0.12 232);
+      --color-section-ghost: oklch(0.55 0.12 228);
+      --color-accent: oklch(0.72 0.12 225);
+      --color-accent-100: oklch(0.96 0.03 220);
+      --color-accent-200: oklch(0.9 0.06 222);
+      --color-accent-300: oklch(0.82 0.1 224);
+      --color-accent-400: oklch(0.74 0.12 226);
+      --color-accent-500: oklch(0.66 0.13 228);
+      --color-accent-600: oklch(0.56 0.13 232);
+      --color-accent-700: oklch(0.46 0.12 238);
+      --color-accent-800: oklch(0.36 0.11 244);
+      --color-accent-900: oklch(0.27 0.09 248);
+      --color-divider: oklch(0.4 0.06 245);
+    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--color-bg); color: var(--color-text); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: var(--color-accent-300); text-decoration: none; }
+    a:hover { color: var(--color-accent-200); }
+    @keyframes teva-wave { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+    @keyframes teva-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(14px); } }
+    @keyframes teva-shimmer { 0%,100% { opacity: .35; transform: translateX(-4%) scaleY(1); } 50% { opacity: .7; transform: translateX(4%) scaleY(1.15); } }
+    @media (prefers-reduced-motion: reduce) { [data-water] * { animation: none !important; } }
+  </style>
+</helmet>
+
+<div style="font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); text-wrap: pretty; overflow-x: clip;">
+
+  <nav data-nav="" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; gap: clamp(12px, 3vw, 24px); height: 60px; padding: 0 clamp(20px, 5vw, 72px); transition: background 300ms ease, box-shadow 300ms ease;">
+    <a href="#inicio" style="display: flex; align-items: center; flex-shrink: 0;"><img src="assets/logo-grupoteva-sinurl.png" alt="Grupo Teva" style="height: 36px; width: auto;"></a>
+    <div style="flex: 1; min-width: 0;"></div>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; gap: 28px; font-size: 13px; line-height: 20px;">
+        <a href="#nosotros" style="color: color-mix(in srgb, var(--color-text) 78%, transparent);">Nosotros</a>
+        <a href="#servicios" style="color: color-mix(in srgb, var(--color-text) 78%, transparent);">Servicios</a>
+        <a href="#plantas" style="color: color-mix(in srgb, var(--color-text) 78%, transparent);">Plantas</a>
+        <a href="#clientes" style="color: color-mix(in srgb, var(--color-text) 78%, transparent);">Clientes</a>
+        <a href="#habilitaciones" style="color: color-mix(in srgb, var(--color-text) 78%, transparent);">Habilitaciones</a>
+      </div>
+    </sc-if>
+    <a href="#contacto" class="btn btn-primary" style="white-space: nowrap; flex-shrink: 0; background: #fff; color: oklch(0.22 0.07 250); border-color: #fff;" style-hover="background: oklch(0.94 0.03 220); color: oklch(0.22 0.07 250);">Contacto</a>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Abrir menú" onClick="{{ toggleMenu }}" style="flex-shrink: 0; width: 44px; height: 44px; margin-right: -10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: transparent; border: 0; padding: 0; cursor: pointer;">
+        <span style="width: 22px; height: 1.5px; background: var(--color-text); border-radius: 1px;"></span>
+        <span style="width: 22px; height: 1.5px; background: var(--color-text); border-radius: 1px;"></span>
+      </button>
+    </sc-if>
+  </nav>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 60; background: color-mix(in srgb, var(--color-bg) 94%, transparent); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; padding: 0 20px 40px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 60px;">
+        <img src="assets/logo-grupoteva-sinurl.png" alt="Grupo Teva" style="height: 36px; width: auto;">
+        <button type="button" aria-label="Cerrar menú" onClick="{{ closeMenu }}" style="width: 44px; height: 44px; margin-right: -10px; background: transparent; border: 0; padding: 0; cursor: pointer; color: var(--color-text); font-size: 28px; line-height: 1;">×</button>
+      </div>
+      <div style="display: flex; flex-direction: column; margin-top: 32px; font-family: var(--font-heading); font-weight: 500; font-size: 34px; letter-spacing: -0.02em;">
+        <a href="#nosotros" onClick="{{ closeMenu }}" style="color: var(--color-text); padding: 10px 0;">Nosotros</a>
+        <a href="#servicios" onClick="{{ closeMenu }}" style="color: var(--color-text); padding: 10px 0;">Servicios</a>
+        <a href="#plantas" onClick="{{ closeMenu }}" style="color: var(--color-text); padding: 10px 0;">Plantas</a>
+        <a href="#clientes" onClick="{{ closeMenu }}" style="color: var(--color-text); padding: 10px 0;">Clientes</a>
+        <a href="#habilitaciones" onClick="{{ closeMenu }}" style="color: var(--color-text); padding: 10px 0;">Habilitaciones</a>
+        <a href="#contacto" onClick="{{ closeMenu }}" style="color: var(--color-accent-300); padding: 10px 0;">Contacto</a>
+      </div>
+      <a href="tel:+541130291264" style="margin-top: auto; font-size: 17px; color: color-mix(in srgb, var(--color-text) 80%, transparent);">11 3029-1264</a>
+    </div>
+  </sc-if>
+
+  <section id="inicio" data-pin="" data-screen-label="01 Hero" style="position: relative; height: 170vh;">
+    <div style="position: sticky; top: 0; height: 100svh; overflow: hidden; display: flex; align-items: flex-end;">
+      <div style="position: absolute; inset: -20%; background: radial-gradient(900px 620px at 78% 18%, oklch(0.62 0.12 225 / 0.75), transparent 62%), radial-gradient(800px 560px at 20% 30%, oklch(0.45 0.13 245 / 0.6), transparent 65%), linear-gradient(180deg, oklch(0.32 0.1 240), oklch(0.18 0.07 250)); transform: scale(calc(1 + var(--p, 0) * 0.35)) translateY(calc(var(--p, 0) * -6%));"></div>
+      <div style="position: absolute; inset: 0; pointer-events: none; transform: translateY(calc(var(--p, 0) * 18%));">{{ water }}</div>
+      <div style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px) clamp(72px, 14vh, 140px); box-sizing: border-box; transform: translateY(calc(var(--p, 0) * -80px)) scale(calc(1 - var(--p, 0) * 0.08)); transform-origin: left bottom; opacity: calc(1 - var(--p, 0) * 1.5);">
+        <h1 style="margin: 0 0 0 -0.05em; font-family: var(--font-heading); font-weight: 500; font-size: clamp(42px, 10vw, 152px); line-height: 0.98; letter-spacing: -0.04em;">
+          <span style="display: block;">Más de 30 años</span>
+          <span style="display: block; color: var(--color-accent-300);">cuidando el planeta.</span>
+        </h1>
+        <p style="margin: clamp(20px, 4vh, 32px) 0 0; max-width: 40ch; font-size: clamp(16px, 1.6vw, 21px); line-height: 1.5; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Tratamiento de Efluentes Líquidos y Residuos Orgánicos / RSU. Trabajamos día a día por un mundo sustentable.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px;">
+          <a href="#servicios" class="btn btn-primary" style="background: #fff; color: oklch(0.22 0.07 250); border-color: #fff;" style-hover="background: oklch(0.94 0.03 220); color: oklch(0.22 0.07 250);">Conocé nuestros servicios</a>
+          <a href="#contacto" class="btn btn-ghost" style="color: #fff; border-color: rgba(255,255,255,0.6);" style-hover="color: #fff; background: rgba(255,255,255,0.12);">Sigamos en contacto</a>
+        </div>
+      </div>
+      <div style="position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); opacity: calc(1 - var(--p, 0) * 4);">Deslizá</div>
+    </div>
+  </section>
+
+  <section id="nosotros" data-pin="" data-words="" data-screen-label="02 Nosotros" style="position: relative; height: 280vh;">
+    <div style="position: sticky; top: 0; height: 100svh; display: flex; align-items: center;">
+      <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px); box-sizing: border-box;">
+        <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: clamp(16px, 3vh, 28px);">Hacemos que las cosas sucedan</div>
+        <p style="margin: 0; max-width: 22ch; font-family: var(--font-heading); font-weight: 500; font-size: clamp(26px, 5.2vw, 72px); line-height: 1.08; letter-spacing: -0.03em; display: flex; flex-wrap: wrap; column-gap: 0.26em;">
+          <sc-for list="{{ words }}" as="w" hint-placeholder-count="24">
+            <span data-word="" style="opacity: 0.16; transition: opacity 120ms linear;">{{ w }}</span>
+          </sc-for>
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 48px; margin-top: clamp(24px, 5vh, 48px); max-width: 900px; opacity: clamp(0, calc((var(--p, 0) - 0.78) * 6), 1); transform: translateY(calc((1 - clamp(0, calc((var(--p, 0) - 0.78) * 6), 1)) * 24px));">
+          <p style="margin: 0; flex: 1 1 280px; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.55; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Tratamos afluentes líquidos, reusando un total de 2500 metros cúbicos por día.</p>
+          <p style="margin: 0; flex: 1 1 280px; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.55; color: color-mix(in srgb, var(--color-text) 80%, transparent);">La dirección técnica está a cargo del Ing. Químico Victor Brener.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-pin="" data-screen-label="03 Impacto" style="position: relative; height: 230vh;">
+    <div style="position: sticky; top: 0; height: 100svh; overflow: hidden;">
+      <div style="position: absolute; inset: 0; clip-path: inset(calc((1 - var(--p, 0)) * 14%) calc((1 - var(--p, 0)) * 10%) round calc((1 - var(--p, 0)) * 28px)); transform: scale(calc(1.12 - var(--p, 0) * 0.12));">
+        <figure class="lighten" style="margin: 0; width: 100%; height: 100%;">
+          <image-slot id="teva-impacto" shape="rect" src="assets/planta-pasarela.png" placeholder="Foto de planta de tratamiento (horizontal)" style="width: 100%; height: 100%;"></image-slot>
+        </figure>
+        <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, color-mix(in srgb, var(--color-bg) 92%, transparent) 0%, transparent 55%);"></div>
+      </div>
+      <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px) clamp(48px, 10vh, 96px); box-sizing: border-box; pointer-events: none; opacity: clamp(0, calc((var(--p, 0) - 0.55) * 4), 1); transform: translateY(calc((1 - clamp(0, calc((var(--p, 0) - 0.55) * 4), 1)) * 40px));">
+        <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: clamp(36px, 7vw, 104px); line-height: 1; letter-spacing: -0.035em;">Impacto Ambiental Positivo</h2>
+        <p style="margin: 20px 0 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Trabajamos día a día por un mundo sustentable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="04 Misión y visión" style="max-width: 1280px; margin: 0 auto; padding: clamp(96px, 16vh, 180px) clamp(20px, 5vw, 72px); box-sizing: border-box;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 64px clamp(32px, 6vw, 112px);">
+      <div data-reveal="" style="opacity: 0; transform: translateY(32px); transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1);">
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent);"><span style="width: 44px; height: 1px; background: var(--color-accent);"></span>Misión</div>
+        <p style="margin: 28px 0 0; font-family: var(--font-heading); font-weight: 500; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.25; letter-spacing: -0.015em;">Nuestra misión es resolver problemáticas ambientales, transformando el residuo o el afluente líquido en un sub-producto.</p>
+      </div>
+      <div data-reveal="" style="opacity: 0; transform: translateY(32px); transition: opacity 900ms cubic-bezier(.2,.7,.2,1) 150ms, transform 900ms cubic-bezier(.2,.7,.2,1) 150ms;">
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent);"><span style="width: 44px; height: 1px; background: var(--color-accent);"></span>Visión</div>
+        <p style="margin: 28px 0 0; font-family: var(--font-heading); font-weight: 500; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.25; letter-spacing: -0.015em;">Fortalecer la gestión ambiental de nuestra empresa. Generando conocimiento e ingeniería, que permita a la comunidad de gozar un ambiente sano.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cifras" data-pin="" data-stats="" data-screen-label="05 Cifras" style="position: relative; height: 240vh; background: radial-gradient(1000px 520px at 85% 0%, oklch(0.6 0.12 225 / 0.55), transparent 64%), linear-gradient(180deg, oklch(0.3 0.1 242), oklch(0.2 0.075 250));">
+    <div style="position: sticky; top: 0; height: 100svh; display: flex; align-items: center;">
+      <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 72px clamp(20px, 5vw, 72px) 32px; box-sizing: border-box;">
+        <h2 style="margin: 0 0 clamp(24px, 6vh, 72px); font-family: var(--font-heading); font-weight: 500; font-size: clamp(30px, 4.6vw, 64px); line-height: 1.05; letter-spacing: -0.03em;">Nuestra empresa en cifras</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: clamp(24px, 5vh, 56px) clamp(16px, 3vw, 40px);">
+          <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 20px; box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-text) 22%, transparent);">
+            <div style="font-family: var(--font-heading); font-weight: 500; font-size: clamp(26px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.035em; font-feature-settings: 'tnum' 1;">+<span data-count="100000">100.000</span><span style="font-size: 0.42em; letter-spacing: 0; margin-left: 6px;">t</span></div>
+            <div style="font-size: clamp(13px, 1.2vw, 15px); line-height: 1.45; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Tratamos más de 100 mil toneladas de residuos orgánicos industriales</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 20px; box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-text) 22%, transparent);">
+            <div style="font-family: var(--font-heading); font-weight: 500; font-size: clamp(26px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.035em; font-feature-settings: 'tnum' 1;"><span data-count="16000">16.000</span><span style="font-size: 0.42em; letter-spacing: 0; margin-left: 6px;">m³</span></div>
+            <div style="font-size: clamp(13px, 1.2vw, 15px); line-height: 1.45; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Tratamos 16 mil metros cúbicos de efluentes industriales al mes</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 20px; box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-text) 22%, transparent);">
+            <div style="font-family: var(--font-heading); font-weight: 500; font-size: clamp(26px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.035em; font-feature-settings: 'tnum' 1;">+<span data-count="500">500</span><span style="font-size: 0.42em; letter-spacing: 0; margin-left: 6px;">t</span></div>
+            <div style="font-size: clamp(13px, 1.2vw, 15px); line-height: 1.45; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Fabricamos más de 500 toneladas de harina de pescado y langostino al mes</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 20px; box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-text) 22%, transparent);">
+            <div style="font-family: var(--font-heading); font-weight: 500; font-size: clamp(26px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.035em; font-feature-settings: 'tnum' 1;">+<span data-count="80">80</span><span style="font-size: 0.42em; letter-spacing: 0; margin-left: 6px;">ha</span></div>
+            <div style="font-size: clamp(13px, 1.2vw, 15px); line-height: 1.45; color: color-mix(in srgb, var(--color-text) 72%, transparent);">Saneamos más de 80 hectáreas contaminadas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ isCarousel }}" hint-placeholder-val="{{ true }}">
+    <section id="servicios" data-pin="" data-hscroll="" data-screen-label="06 Servicios" style="position: relative; height: 300vh;">
+      <div style="position: sticky; top: 0; height: 100svh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: clamp(24px, 5vh, 48px);">
+        <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 60px clamp(20px, 5vw, 72px) 0; box-sizing: border-box;">
+          <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px;">Servicios</div>
+          <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.05; letter-spacing: -0.03em;">Cada vez que reciclas estas dando vida al planeta.</h2>
+        </div>
+        <div data-track="" style="display: flex; gap: clamp(16px, 2vw, 24px); padding: 0 clamp(20px, 5vw, 72px); width: max-content; will-change: transform;">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+            <article style="flex: 0 0 auto; width: min(80vw, 400px); display: flex; flex-direction: column; background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
+              <figure class="lighten" style="margin: 0; aspect-ratio: 4 / 3; max-height: 38vh; width: 100%;">
+                <image-slot id="{{ s.slot }}" src="{{ s.src }}" shape="rect" placeholder="Foto del servicio" style="width: 100%; height: 100%;"></image-slot>
+              </figure>
+              <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px;">
+                <div style="font-size: 13px; color: var(--color-accent); font-feature-settings: 'tnum' 1;">{{ s.num }}</div>
+                <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em;">{{ s.title }}</h3>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{ isGrid }}" hint-placeholder-val="{{ false }}">
+    <section id="servicios" data-screen-label="06 Servicios" style="max-width: 1280px; margin: 0 auto; padding: clamp(96px, 14vh, 160px) clamp(20px, 5vw, 72px); box-sizing: border-box;">
+      <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px;">Servicios</div>
+      <h2 style="margin: 0 0 48px; max-width: 18ch; font-family: var(--font-heading); font-weight: 500; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.05; letter-spacing: -0.03em;">Cada vez que reciclas estas dando vida al planeta.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 20px;">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+          <article data-reveal="" style="display: flex; flex-direction: column; background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden; opacity: 0; transform: translateY(32px); transition: opacity 800ms cubic-bezier(.2,.7,.2,1), transform 800ms cubic-bezier(.2,.7,.2,1);">
+            <figure class="lighten" style="margin: 0; aspect-ratio: 4 / 3; width: 100%;">
+              <image-slot id="{{ s.slot }}" src="{{ s.src }}" shape="rect" placeholder="Foto del servicio" style="width: 100%; height: 100%;"></image-slot>
+            </figure>
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px;">
+              <div style="font-size: 13px; color: var(--color-accent); font-feature-settings: 'tnum' 1;">{{ s.num }}</div>
+              <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em;">{{ s.title }}</h3>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="plantas" data-pin="" data-verbs="" data-screen-label="07 Plantas" style="position: relative; height: 320vh;">
+    <div style="position: sticky; top: 0; height: 100svh; display: flex; align-items: center; background: radial-gradient(900px 600px at 90% 50%, color-mix(in srgb, var(--color-accent-900) 90%, transparent), transparent 65%);">
+      <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 60px clamp(20px, 5vw, 72px) 0; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(20px, 5vh, 64px) clamp(32px, 6vw, 96px); align-items: center;">
+        <div>
+          <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px;">Tratamiento y disposición final</div>
+          <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: clamp(28px, 4.2vw, 56px); line-height: 1.05; letter-spacing: -0.03em;">Plantas de Tratamiento de Efluentes</h2>
+          <p style="margin: clamp(14px, 3vh, 24px) 0 0; max-width: 46ch; font-size: clamp(15px, 1.4vw, 17px); line-height: 1.6; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Ofrecemos servicios de tratamiento y disposición final habilitados en las provincias de Chubut, Rio Negro, Santa Cruz, Córdoba y la provincia de Buenos Aires.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: clamp(14px, 3vh, 24px);">
+            <span class="tag tag-outline">Chubut</span>
+            <span class="tag tag-outline">Rio Negro</span>
+            <span class="tag tag-outline">Santa Cruz</span>
+            <span class="tag tag-outline">Córdoba</span>
+            <span class="tag tag-outline">Buenos Aires</span>
+          </div>
+        </div>
+        <div>
+          <div style="position: relative; height: clamp(48px, 7.5vw, 110px); font-family: var(--font-heading); font-weight: 500; font-size: clamp(36px, 6.4vw, 92px); max-width: 100%; line-height: 1.1; letter-spacing: -0.04em;">
+            <span data-verb="" style="position: absolute; left: 0; top: 0;">Diseñamos</span>
+            <span data-verb="" style="position: absolute; left: 0; top: 0; opacity: 0;">Construimos</span>
+            <span data-verb="" style="position: absolute; left: 0; top: 0; opacity: 0;">Desarrollamos</span>
+            <span data-verb="" style="position: absolute; left: 0; top: 0; opacity: 0; color: var(--color-accent-300);">Operamos</span>
+          </div>
+          <div style="display: flex; gap: 8px; margin-top: 24px; max-width: 320px;">
+            <span data-verb-bar="" style="flex: 1; height: 2px; border-radius: 2px; background: var(--color-accent);"></span>
+            <span data-verb-bar="" style="flex: 1; height: 2px; border-radius: 2px; background: var(--color-neutral-800);"></span>
+            <span data-verb-bar="" style="flex: 1; height: 2px; border-radius: 2px; background: var(--color-neutral-800);"></span>
+            <span data-verb-bar="" style="flex: 1; height: 2px; border-radius: 2px; background: var(--color-neutral-800);"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes" data-screen-label="08 Clientes" style="padding: clamp(96px, 14vh, 160px) 0 0; overflow: hidden;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px) 48px; box-sizing: border-box;">
+      <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px;">Clientes</div>
+      <h2 data-reveal="" style="margin: 0; max-width: 20ch; font-family: var(--font-heading); font-weight: 500; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.05; letter-spacing: -0.03em; opacity: 0; transform: translateY(32px); transition: opacity 800ms cubic-bezier(.2,.7,.2,1), transform 800ms cubic-bezier(.2,.7,.2,1);">Empresas y municipios que confían en nosotros</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px; -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);">
+      <div data-marquee="1" style="display: flex; gap: 16px; width: max-content; will-change: transform;">
+        <sc-for list="{{ clientsA }}" as="c" hint-placeholder-count="10">
+          <div style="flex: 0 0 auto; width: clamp(128px, 18vw, 210px); height: clamp(72px, 9vw, 104px); display: flex; align-items: center; justify-content: center; padding: 12px 20px; box-sizing: border-box; border-radius: var(--radius-lg); background: var(--color-neutral-100);">
+            <img src="{{ c }}" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;">
+          </div>
+        </sc-for>
+      </div>
+      <div data-marquee="-1" style="display: flex; gap: 16px; width: max-content; will-change: transform;">
+        <sc-for list="{{ clientsB }}" as="c" hint-placeholder-count="10">
+          <div style="flex: 0 0 auto; width: clamp(128px, 18vw, 210px); height: clamp(72px, 9vw, 104px); display: flex; align-items: center; justify-content: center; padding: 12px 20px; box-sizing: border-box; border-radius: var(--radius-lg); background: var(--color-neutral-100);">
+            <img src="{{ c }}" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;">
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilitaciones" data-screen-label="08 Habilitaciones" style="max-width: 1280px; margin: 0 auto; padding: clamp(96px, 14vh, 160px) clamp(20px, 5vw, 72px) clamp(64px, 10vh, 120px); box-sizing: border-box;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px clamp(32px, 6vw, 96px);">
+      <h2 data-reveal="" style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: clamp(32px, 4.2vw, 56px); line-height: 1.05; letter-spacing: -0.03em; opacity: 0; transform: translateY(32px); transition: opacity 800ms cubic-bezier(.2,.7,.2,1), transform 800ms cubic-bezier(.2,.7,.2,1);">Habilitaciones</h2>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ permits }}" as="h" hint-placeholder-count="3">
+          <div data-reveal="" style="display: flex; align-items: baseline; gap: clamp(14px, 3vw, 24px); padding: clamp(18px, 3vw, 24px) 0; background: linear-gradient(to right, transparent, var(--color-divider) 48px, var(--color-divider) calc(100% - 48px), transparent) bottom / 100% 1px no-repeat; opacity: 0; transform: translateY(24px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1);">
+            <span style="font-size: 13px; color: var(--color-accent); font-feature-settings: 'tnum' 1;">{{ h.num }}</span>
+            <span style="font-family: var(--font-heading); font-weight: 500; font-size: clamp(20px, 2vw, 26px); line-height: 1.3; letter-spacing: -0.01em;">{{ h.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" data-screen-label="09 Contacto" style="position: relative; background: radial-gradient(1100px 600px at 80% 100%, color-mix(in srgb, var(--color-accent-900) 85%, transparent), transparent 65%);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(96px, 14vh, 160px) clamp(20px, 5vw, 72px); box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 48px clamp(32px, 6vw, 96px);">
+      <div data-reveal="" style="opacity: 0; transform: translateY(32px); transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1);">
+        <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: clamp(40px, 7vw, 104px); line-height: 0.98; letter-spacing: -0.04em;">Sigamos en contacto</h2>
+        <p style="margin: 24px 0 0; max-width: 40ch; font-size: 17px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Contanos qué necesitás y te respondemos a la brevedad.</p>
+        <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-300);">Teléfono directo</div>
+          <a href="tel:+541130291264" style="font-family: var(--font-heading); font-weight: 500; font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -0.02em; color: var(--color-text); text-decoration: none;" style-hover="color: var(--color-accent-300);">11 3029-1264</a>
+        </div>
+      </div>
+      <form data-reveal="" onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 16px; opacity: 0; transform: translateY(32px); transition: opacity 900ms cubic-bezier(.2,.7,.2,1) 150ms, transform 900ms cubic-bezier(.2,.7,.2,1) 150ms;">
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px;">
+            <div class="field"><label for="c-name">Nombre</label><input id="c-name" class="input" type="text" required="" placeholder="Tu nombre"></div>
+            <div class="field"><label for="c-mail">Email</label><input id="c-mail" class="input" type="email" required="" placeholder="nombre@empresa.com"></div>
+          </div>
+          <div class="field"><label for="c-co">Empresa</label><input id="c-co" class="input" type="text" placeholder="Opcional"></div>
+          <div class="field"><label for="c-msg">Mensaje</label><textarea id="c-msg" class="input" rows="4" required="" placeholder="¿En qué podemos ayudarte?" style="resize: vertical; min-height: 112px; font-family: inherit;"></textarea></div>
+          <div style="display: flex;"><button type="submit" class="btn btn-primary" style="min-height: 44px; flex: 1 1 auto; max-width: 260px;" disabled="{{ sending }}">{{ sendLabel }}</button></div>
+          <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: var(--color-accent-300);">No pudimos enviar el mensaje. Probá de nuevo o llamanos al 11 3029-1264.</p>
+          </sc-if>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 32px; border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-heading); font-weight: 500; font-size: 24px; line-height: 1.2; color: var(--color-accent-300);">¡Gracias! Recibimos tu mensaje.</div>
+            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Nuestro equipo se va a comunicar con vos pronto.</p>
+          </div>
+        </sc-if>
+      </form>
+    </div>
+  </section>
+
+  <footer style="max-width: 1280px; margin: 0 auto; padding: 40px clamp(20px, 5vw, 72px) 48px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; background: linear-gradient(to right, transparent, var(--color-divider) 48px, var(--color-divider) calc(100% - 48px), transparent) top / 100% 1px no-repeat;">
+    <img src="assets/logo-grupoteva-sinurl.png" alt="Grupo Teva" style="height: 40px; width: auto;">
+    <div style="font-size: 13px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 60%, transparent); max-width: 52ch;">Perteneciente al grupo DAVAR AMBIENTAL S.A.S · Dirección técnica: Ing. Químico Victor Brener</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;servicesLayout&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;carrusel&quot;, &quot;grilla&quot;], &quot;default&quot;: &quot;carrusel&quot;, &quot;tsType&quot;: &quot;'carrusel' | 'grilla'&quot;, &quot;section&quot;: &quot;Servicios&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false, mobile: typeof window !== 'undefined' && window.innerWidth < 860, menuOpen: false };
+
+  componentDidMount() {
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(this.update); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.onResize = () => { const m = window.innerWidth < 860; if (m !== this.state.mobile) this.setState({ mobile: m, menuOpen: false }); };
+    window.addEventListener('resize', this.onResize);
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    this.observe();
+    this.update();
+    this.mx = 0; this.lastY = window.scrollY; this.lastT = performance.now();
+    const tick = (t) => {
+      const dt = Math.min(64, t - this.lastT); this.lastT = t;
+      const dy = Math.abs(window.scrollY - this.lastY); this.lastY = window.scrollY;
+      if (!this.reduce) this.mx += dt * 0.04 + dy * 0.6;
+      document.querySelectorAll('[data-marquee]').forEach((m) => {
+        const half = m.scrollWidth / 2; if (!half) return;
+        const dir = +m.dataset.marquee;
+        const x = this.mx % half;
+        m.style.transform = `translate3d(${dir > 0 ? -x : x - half}px,0,0)`;
+      });
+      this.mraf = requestAnimationFrame(tick);
+    };
+    this.mraf = requestAnimationFrame(tick);
+  }
+  componentDidUpdate() { this.observe(); this.update(); }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    this.io && this.io.disconnect();
+    cancelAnimationFrame(this.raf);
+    cancelAnimationFrame(this.mraf);
+  }
+  observe() {
+    document.querySelectorAll('[data-reveal]').forEach((el) => { if (!el.__obs) { el.__obs = 1; this.io.observe(el); } });
+  }
+
+  update = () => {
+    this.raf = null;
+    const vh = window.innerHeight, vw = window.innerWidth;
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      if (el.style.opacity === '1') return;
+      const rr = el.getBoundingClientRect();
+      if (rr.top < vh * 0.92 && rr.bottom > 0) { el.style.opacity = '1'; el.style.transform = 'none'; }
+    });
+    const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+    const nav = document.querySelector('[data-nav]');
+    if (nav) {
+      const on = window.scrollY > 40;
+      nav.style.background = on ? 'color-mix(in srgb, var(--color-bg) 72%, transparent)' : 'transparent';
+      nav.style.backdropFilter = nav.style.webkitBackdropFilter = on ? 'blur(20px) saturate(160%)' : 'none';
+      nav.style.boxShadow = on ? '0 1px 0 var(--color-divider)' : 'none';
+    }
+    document.querySelectorAll('[data-pin]').forEach((el) => {
+      if (el.hasAttribute('data-hscroll')) {
+        const track = el.querySelector('[data-track]');
+        if (track) {
+          const over = Math.max(0, track.scrollWidth - vw);
+          el.style.height = (over + vh * 1.4) + 'px';
+          el.__over = over;
+        }
+      }
+      const r = el.getBoundingClientRect();
+      const total = Math.max(1, r.height - vh);
+      const p = this.reduce ? 1 : clamp(-r.top / total);
+      el.style.setProperty('--p', p.toFixed(4));
+
+      if (el.hasAttribute('data-words')) {
+        const ws = el.querySelectorAll('[data-word]'); const n = ws.length;
+        ws.forEach((w, i) => { w.style.opacity = clamp(p * 1.35 * n - i, 0.16, 1); });
+      }
+      if (el.hasAttribute('data-stats')) {
+        const k = 1 - Math.pow(1 - clamp(p * 1.8), 3);
+        el.querySelectorAll('[data-count]').forEach((c) => {
+          c.textContent = Math.round(+c.dataset.count * k).toLocaleString('es-AR');
+        });
+      }
+      if (el.hasAttribute('data-hscroll')) {
+        const track = el.querySelector('[data-track]');
+        const q = clamp((p - 0.08) / 0.84);
+        if (track) track.style.transform = `translate3d(${-q * (el.__over || 0)}px,0,0)`;
+      }
+      if (el.hasAttribute('data-verbs')) {
+        const pos = clamp(p * 1.15) * 3;
+        el.querySelectorAll('[data-verb]').forEach((v, i) => {
+          const d = pos - i;
+          v.style.opacity = clamp(1 - Math.abs(d) * 1.8);
+          v.style.transform = `translateY(${-d * 36}px)`;
+        });
+        const act = Math.round(pos);
+        el.querySelectorAll('[data-verb-bar]').forEach((b, i) => {
+          b.style.background = i <= act ? 'var(--color-accent)' : 'var(--color-neutral-800)';
+        });
+      }
+    });
+  };
+
+  renderVals() {
+    const layout = this.props.servicesLayout ?? 'carrusel';
+    const statement = 'Somos una empresa con más de 30 años de trayectoria pertenecientes al grupo DAVAR AMBIENTAL S.A.S en tratamiento de Efluentes Líquidos y Residuos Orgánicos.';
+    if (!this.waterEl) {
+      const h = React.createElement;
+      const wave = (amp, len, phase) => {
+        let d = `M0 ${100 + amp * Math.sin(phase)}`;
+        for (let x = 0; x <= 2400; x += 20) d += ` L${x} ${(100 + amp * Math.sin((x / len) * Math.PI * 2 + phase)).toFixed(1)}`;
+        return d + ' L2400 400 L0 400 Z';
+      };
+      const layers = [
+        { top: '38%', amp: 18, len: 600, ph: 0.0, dur: 38, bob: 9, c: 'oklch(0.78 0.1 215)', o: 0.35 },
+        { top: '48%', amp: 24, len: 800, ph: 1.4, dur: 28, bob: 7, c: 'oklch(0.62 0.13 230)', o: 0.4 },
+        { top: '58%', amp: 16, len: 480, ph: 2.6, dur: 22, bob: 6, c: 'oklch(0.5 0.14 240)', o: 0.45 },
+        { top: '68%', amp: 28, len: 1200, ph: 0.8, dur: 17, bob: 8, c: 'oklch(0.35 0.12 248)', o: 0.75 },
+        { top: '80%', amp: 14, len: 400, ph: 2.0, dur: 12, bob: 5, c: 'var(--color-bg)', o: 0.85 }
+      ];
+      this.waterEl = h('div', { 'data-water': '', style: { position: 'absolute', inset: 0, overflow: 'hidden' } },
+        layers.map((l, i) => h('div', { key: i, style: { position: 'absolute', left: 0, right: 0, top: l.top, bottom: 0, animation: `teva-bob ${l.bob}s ease-in-out ${-i * 1.3}s infinite` } },
+          h('svg', { viewBox: '0 0 2400 400', preserveAspectRatio: 'none', style: { position: 'absolute', left: 0, top: 0, width: '200%', height: '100%', minWidth: 2400, animation: `teva-wave ${l.dur}s linear infinite${i % 2 ? ' reverse' : ''}` } },
+            h('path', { d: wave(l.amp, l.len, l.ph), fill: l.c, fillOpacity: l.o }),
+            h('path', { d: wave(l.amp, l.len, l.ph).replace(/ L2400 400 L0 400 Z$/, ''), fill: 'none', stroke: 'var(--color-accent-300)', strokeOpacity: 0.18, strokeWidth: 1.5, vectorEffect: 'non-scaling-stroke' })
+          ))),
+        h('div', { style: { position: 'absolute', left: '-10%', right: '-10%', top: '44%', height: '30%', background: 'radial-gradient(60% 40% at 30% 50%, color-mix(in srgb, var(--color-accent-300) 18%, transparent), transparent 70%), radial-gradient(40% 30% at 75% 40%, color-mix(in srgb, var(--color-accent-200) 12%, transparent), transparent 70%)', mixBlendMode: 'screen', animation: 'teva-shimmer 9s ease-in-out infinite' } })
+      );
+    }
+    const logos = Array.from({ length: 20 }, (_, i) => `assets/clientes/${String(i + 1).padStart(2, '0')}.png`);
+    const a = logos.slice(0, 10), b = logos.slice(10);
+    return {
+      water: this.waterEl,
+      mobile: this.state.mobile,
+      desktop: !this.state.mobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      clientsA: a.concat(a),
+      clientsB: b.concat(b),
+      words: statement.split(' '),
+      isCarousel: layout === 'carrusel',
+      isGrid: layout === 'grilla',
+      services: [
+        { num: '01', title: 'Tratamiento de efluentes', slot: 'svc-efluentes', src: 'assets/planta-tanques-vista.png' },
+        { num: '02', title: 'Operación y mantenimiento', slot: 'svc-operacion', src: 'assets/planta-tanques-frente.png' },
+        { num: '03', title: 'Ingeniería', slot: 'svc-ingenieria', src: 'assets/planta-campo.png' },
+        { num: '04', title: 'Montaje y puesta en marcha', slot: 'svc-montaje', src: 'assets/planta-pasarela.png' },
+        { num: '05', title: 'Plantas modulares', slot: 'svc-modulares', src: 'assets/planta-modular.png' }
+      ],
+      permits: [
+        { num: '01', name: 'ODPS' },
+        { num: '02', name: 'ADA' },
+        { num: '03', name: 'Ministerio de Ambiente y Control del Desarrollo Sustentable' }
+      ],
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      sending: this.state.sending,
+      sendLabel: this.state.sending ? 'Enviando…' : 'Enviar mensaje',
+      error: this.state.error,
+      submit: async (e) => {
+        e.preventDefault();
+        const v = (id) => (document.getElementById(id) || {}).value || '';
+        this.setState({ sending: true, error: false });
+        try {
+          const r = await fetch('https://formsubmit.co/ajax/vicobren@gmail.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+              _subject: 'Nuevo contacto desde la web de Grupo Teva',
+              _template: 'table',
+              _captcha: 'false',
+              _replyto: v('c-mail'),
+              Nombre: v('c-name'), Email: v('c-mail'), Empresa: v('c-co'), Mensaje: v('c-msg')
+            })
+          });
+          if (!r.ok) throw new Error();
+          this.setState({ sent: true, sending: false });
+        } catch (err) {
+          this.setState({ sending: false, error: true });
+        }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
